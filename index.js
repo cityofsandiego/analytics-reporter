@@ -38,6 +38,12 @@ var run = function(options) {
   if (options.debug) options.verbose = options.debug;
   if (options.verbose) options.debug = options.verbose;
 
+
+  // override view id if passed
+  if (options.view_id)
+    config.account.ids = options.view_id;
+
+
   // can be overridden to only do one report
   var names;
   if (options.only)
